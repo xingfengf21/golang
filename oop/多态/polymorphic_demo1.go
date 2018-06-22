@@ -20,7 +20,7 @@ func (u *user) notify(){
 }
 
 func (a *admin) notify(){
-	fmt.Printf("Sending user email to %s<%s>\n",a.person.name,a.person.email)
+	fmt.Printf("Sending admin email to %s<%s>\n",a.person.name,a.person.email)
 }
 
 type notifier interface{
