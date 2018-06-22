@@ -22,6 +22,11 @@ func (u user) notify() {
 func main() {
 	//创建一个user类型的值,并发送通知
 	u := user{"Bill", "bill@email.com"}
+	/*
+	  如果使用指针接受着来实现一个接口,那么只有指向那个类型的指针才能实现对应的接口
+	  如果使用值接受着实来实现一个接口,南无那个类型的值和指针都能够实现对应的接口
+	*/
+	sendNotification(&u)
 	sendNotification(u)
 }
 
