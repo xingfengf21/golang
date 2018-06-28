@@ -18,8 +18,7 @@ func main() {
 
 func receive(strChan <- chan string,
 	syncChan1 <- chan struct{},
-	syncChan2 chan<-  struct{})  {
-
+	syncChan2 chan <-   struct{})  {
 	<-syncChan1
 	fmt.Println("Received a sync signal and wait a second...[receiver]")
 	time.Sleep(time.Second)
@@ -29,6 +28,9 @@ func receive(strChan <- chan string,
 	fmt.Println("Stopped.[receiver]")
 	syncChan2 <-struct{}{}
 }
+
+//syncChan2 chan<-  struct{}  往管道里写
+//syncChan1 <- chan struct{} 从管道里读
 
 func send(strChan chan <-  string,
 	syncChan1 chan <-  struct{},
