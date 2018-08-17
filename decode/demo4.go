@@ -1,0 +1,30 @@
+package main
+
+import (
+	"encoding/pem"
+	"fmt"
+)
+
+const PRIVATE_KEY string = `
+-----BEGIN RSA PRIVATE KEY-----
+MIICXgIBAAKBgQDESDVYOL3TIeBJ0nn0wpMrnX2d2AnfRRAQfdsXPxeEZqPAApKo
+HCxSpNvjzlk0daadRBUPM2cDYMd4qhcE0iKjztRC9FxiKWxeu9uPmuuDPQ4vVB3D
+cg493WSau/8I5yDOZ6d9T/vriM4SXjfaCSpfr+ARSaSuAWe99IWXkF8Y/QIDAQAB
+AoGBAJQq7hnqu2Dl8anIeMeLGg2SlYDR1KH2QGoyl3C078vCr1oClzLQEaVRTaxp
+2G0BYwTUoBEZfGnQZMNxom7BMeOjIn570TS9rVxLTz3JhKLD0Krp8xoT4PS31g9u
+H8yTomEmgcnkVgRLnbPhx80qLeJ5GpI7cn4QBor2iSwCxuMBAkEA1S3glBEu+sNe
+l2O4xTdCS+Ms5IL5KbJUIb8aCzowCNCAvhqPHPXCk/91TYYoP2X9vcAOPGB5IoJx
+5tELerWo2wJBAOu1ccjdVDkU1HcJgpZvzVFGQWMyHgjMeALLOCQa+wtxJeADkpjc
+jXXKT5KJtdW3Ee4qjQnuIk/NpNL7klCt4QcCQQC0iYveGcddm0NqlouOicPdnOES
+DVGSXHIfukYGKBsx+9JsLPXyordMu1XOd8VyG6AOqK3luBYegbaQsY01OM9tAkBF
+wW3KFw4s0mhKTisyYCXwDo2dUKCo0/IUSZX0wXNYIIUn9Ya17FeE63l/EXgZplMN
+G9SfgrTuzxofQko7zCmTAkEAn0moEkIxAUfRDYfYW1mAGnGYS3NjDKKu8gj0vejh
+V29mv5626/xiHsVJt2KofTP5KolOyX98kqydHQ2BJnibMg==
+-----END RSA PRIVATE KEY-----
+`
+
+func main() {
+	privateKey := []byte(PRIVATE_KEY)
+	block, _ := pem.Decode(privateKey)
+	fmt.Println(block)
+}
